@@ -1,16 +1,61 @@
 # Godot
 .import/
+.godot/
 export_presets.cfg
 export.cfg
 .cache/
 tmp/
 bin/
+*.translation
 
 # System
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Node projects
+# Node
 node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Solana
+wallet.json
+collection.json
+*.keypair
+test-ledger/
+
+# Build
+dist/
+build/
+target/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.project
+.classpath
+.settings/
+
+# OS
+__pycache__/
+*.py[cod]
+*$py.class

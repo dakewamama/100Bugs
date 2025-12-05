@@ -18,18 +18,18 @@
     },
     {
       "name": "create_collection",
-      "discriminator": [156, 251, 92, 54, 233, 2, 16, 82],
+      "discriminator": [156, 251, 92, 54, 233, 2, 164, 89],
       "accounts": [
         { "name": "creator", "writable": true, "signer": true },
         { "name": "collection", "writable": true, "signer": true },
         { "name": "collection_authority", "writable": true },
         { "name": "campaign", "writable": true },
-        { "name": "core_program" },
-        { "name": "system_program" }
+        { "name": "core_program", "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d" },
+        { "name": "system_program", "address": "11111111111111111111111111111111" }
       ],
       "args": [
         { "name": "campaign_id", "type": "u8" },
-        { "name": "args", "type": { "defined": { "name": "CreateCollectionArgs" } } }
+        { "name": "args", "type": { "defined": "CreateCollectionArgs" } }
       ]
     },
     {
@@ -40,8 +40,8 @@
         { "name": "asset", "writable": true, "signer": true },
         { "name": "collection", "writable": true },
         { "name": "collection_authority" },
-        { "name": "core_program" },
-        { "name": "system_program" }
+        { "name": "core_program", "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d" },
+        { "name": "system_program", "address": "11111111111111111111111111111111" }
       ],
       "args": [
         { "name": "bug_id", "type": "u8" },
@@ -50,7 +50,33 @@
       ]
     }
   ],
+  "accounts": [
+    { "name": "Campaign", "discriminator": [50, 40, 49, 11, 157, 220, 229, 192] },
+    { "name": "CollectionAuthority", "discriminator": [142, 16, 193, 115, 5, 230, 154, 86] }
+  ],
   "types": [
+    {
+      "name": "Campaign",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "game_authority", "type": "pubkey" },
+          { "name": "campaign_id", "type": "u8" },
+          { "name": "total_completions", "type": "u64" },
+          { "name": "unique_players", "type": "u64" }
+        ]
+      }
+    },
+    {
+      "name": "CollectionAuthority",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "collection", "type": "pubkey" },
+          { "name": "campaign_id", "type": "u8" }
+        ]
+      }
+    },
     {
       "name": "CreateCollectionArgs",
       "type": {
